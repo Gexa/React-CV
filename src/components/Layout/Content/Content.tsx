@@ -19,7 +19,7 @@ const Content: React.FunctionComponent<{}> = () => {
 			return dateString;
 		}
 
-		return dateString.split(' - ').map((line: string, lineKey: any) => <span key={lineKey}>{`${line} ${lineKey === 0 ? ' - ' : ''}`}<br /></span>)
+		return dateString.split(' - ').map((line: string, lineKey: any) => <span key={lineKey}>{`${line} ${lineKey === 0 ? ' - ' : ''}`}</span>)
 	}
 
 	return (

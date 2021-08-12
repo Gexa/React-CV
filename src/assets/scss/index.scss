@@ -8,17 +8,26 @@
     margin: 0 auto;
 
     ul.language-picker {
-        float: right;
-        margin: 0 0 30px 0;
+        margin: 15px 0 15px 0;
         padding: 0;
         list-style: none;
         display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media all and (min-width: 960px) {
+            float: right;
+            margin: 0 0 30px 0;
+            padding: 0;
+        }
+
         > li {
             &:first-child {
                 margin-right: 30px;
             }
 
             > a {
+                font-size: 1.1rem;
                 transition: all 0.15s ease;
                 color: $primary;
                 width: 100%;
@@ -63,12 +72,12 @@
             transition: all 0.75s cubic-bezier(0.25, 0.5, 0.5, 0.9);
         }
 
-        #hu {
+        /* #hu {
             transform: rotateX(0deg) rotateY(0deg);
         }
 
-        > #en {
-            transform: rotateY(-0deg);
+        #en {
+            transform: rotateY(-180deg);
         }
 
         &.flipped {
@@ -81,7 +90,7 @@
                 visibility: visible;
                 transform: rotateX(0deg) rotateY(0deg);
             }
-        }
+        } */
     }
 
     header {
@@ -230,18 +239,21 @@
                 margin-bottom: 30px;
                 font-size: 11pt;
                 line-height: 20px;
-                padding-left: 30px;
                 position: relative;
 
-                &:before {
-                    content: "";
-                    width: 8px;
-                    height: 8px;
-                    transform: rotate(45deg);
-                    background: $square-color;
-                    position: absolute;
-                    top: calc(50% - 4px);
-                    left: 0;
+                @media all and (min-width: 960px) {
+                    padding-left: 30px;
+
+                    &:before {
+                        content: "";
+                        width: 8px;
+                        height: 8px;
+                        transform: rotate(45deg);
+                        background: $square-color;
+                        position: absolute;
+                        top: calc(50% - 4px);
+                        left: 0;
+                    }
                 }
 
                 @media all and (min-width: 960px) {
@@ -251,8 +263,25 @@
                 .date-col {
                     width: 100%;
                     align-self: center;
+                    margin-bottom: 15px;
+                    font-size: 1.1rem;
+                    color: $primary;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid #EEE;
+
+                    @media all and (min-width: 960px) {
+                        > span:first-child {
+                            clear: both;
+                            display: block;
+                        }
+                    }
+
                     @media all and (min-width: 960px) {
                         width: 20%;
+                        color: $text-dark;
+                        font-size: 1rem;
+                        border: none;
+                        padding-bottom: 0;
                     }
                 }
                 .date-description {
@@ -338,7 +367,9 @@
         }
 
         p.my-goal {
-            padding-left: 30px;
+            @media all and (min-width: 960px) {
+                padding-left: 30px;
+            }
 
             > a.download {
                 float: left;
@@ -375,7 +406,10 @@
         > .sign {
             float: right;
             text-align: center;
-            margin: 0 45px 0 0;
+            margin: 0;
+            @media all and (min-width: 960px) {
+                margin: 0 45px 0 0;
+            }
 
             > img {
                 max-width: 120px;
@@ -389,6 +423,28 @@
                 font-weight: lighter;
                 display: block;
             }
+        }
+    }
+
+    .page404 {
+        text-align: center;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: normal;
+            > small {
+                display: block;
+                font-weight: lighter;
+            }
+        }
+
+        a {
+            background-color: $primary;
+            color: $text-light;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+            margin: 30px 0;
         }
     }
 }
